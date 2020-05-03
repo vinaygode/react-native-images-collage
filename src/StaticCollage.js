@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet, Text } from "react-native";
+import { View, Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 
 class StaticCollage extends React.Component {
@@ -11,6 +11,7 @@ class StaticCollage extends React.Component {
       imageHeight,
       imageWidth,
       seperatorStyle,
+      onPress
     } = this.props;
 
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -28,11 +29,14 @@ class StaticCollage extends React.Component {
             : Image.resolveAssetSource(image);
 
           return (
+           <TouchableOpacity activeOpacity={0.9} onPress={()=>onPress(i)}>
             <Image
               key={i}
               source={source}
               style={[{ height: imageHeight, width: imageWidth }, imageStyle]}
             />
+          </TouchableOpacity>
+
           );
         });
 
@@ -107,6 +111,7 @@ StaticCollage.defaultProps = {
 StaticCollage.propTypes = {
   images: PropTypes.array,
   matrix: PropTypes.array,
+  onPress: PropTypes.func,
   direction: PropTypes.oneOf(["row", "column"]),
 };
 
