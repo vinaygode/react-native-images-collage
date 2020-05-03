@@ -29,7 +29,7 @@ class StaticCollage extends React.Component {
             : Image.resolveAssetSource(image);
 
           return (
-           <TouchableOpacity activeOpacity={0.9} onPress={()=>onPress(i)}>
+           <TouchableOpacity activeOpacity={0.9} onPress={()=>onPress(i+startIndex)}>
             <Image
               key={i}
               source={source}
