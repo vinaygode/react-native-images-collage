@@ -72,7 +72,7 @@ class StaticCollage extends React.Component {
           flex: 1,
           flexDirection: "column",
           alignSelf: "center",
-          alignItems: "flex-center",
+          alignItems: "center",
         }}
       >
         <View
@@ -80,7 +80,7 @@ class StaticCollage extends React.Component {
             flex: 1,
             flexDirection: "row",
             alignSelf: "center",
-            alignItems: "flex-center",
+            alignItems: "center",
           }}
         >
           {this.renderMatrix()}
