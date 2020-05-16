@@ -33,7 +33,7 @@ class StaticCollage extends React.Component {
             <Image
               key={i}
               source={source}
-              style={[{ height: imageHeight, width: imageWidth }, imageStyle]}
+              style={[{ height: element !== 1 ? imageWidth*0.9/element:imageWidth-90,width: element !== 1 ? imageWidth*0.8/element : imageWidth-120, resizeMode:'cover'}, imageStyle]}
             />
           </TouchableOpacity>
 
